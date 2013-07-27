@@ -18,7 +18,7 @@
         //
         _button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         _button.frame = CGRectMake(100, 40, 120, 40);
-        [_button setTitle:@"点我吧" forState:UIControlStateNormal];
+        [_button setTitle:@"橙色的按钮" forState:UIControlStateNormal];
         [_button setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
         [_button addTarget:self action:@selector(touchAction:) forControlEvents:UIControlEventTouchUpInside];
         //

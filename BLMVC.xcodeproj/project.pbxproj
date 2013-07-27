@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18139CAA17A379EA006FDA5B /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 18139CA717A379EA006FDA5B /* UIScrollView+SVInfiniteScrolling.m */; };
+		18139CAB17A379EA006FDA5B /* UIScrollView+SVPullToRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 18139CA917A379EA006FDA5B /* UIScrollView+SVPullToRefresh.m */; };
+		18139CB017A37A19006FDA5B /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 18139CAD17A37A19006FDA5B /* SVProgressHUD.bundle */; };
+		18139CB117A37A19006FDA5B /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 18139CAF17A37A19006FDA5B /* SVProgressHUD.m */; };
+		18139CB317A37B00006FDA5B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18139CB217A37B00006FDA5B /* QuartzCore.framework */; };
 		18373C23175D8B78009D94E6 /* BLUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 18373C22175D8B78009D94E6 /* BLUser.m */; };
 		18373C26175D9407009D94E6 /* BLPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 18373C25175D9407009D94E6 /* BLPost.m */; };
 		18373C2A175DBEB2009D94E6 /* profile-image-placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 18373C28175DBEB2009D94E6 /* profile-image-placeholder.png */; };
@@ -57,6 +62,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18139CA517A379EA006FDA5B /* SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVPullToRefresh.h; sourceTree = "<group>"; };
+		18139CA617A379EA006FDA5B /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
+		18139CA717A379EA006FDA5B /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
+		18139CA817A379EA006FDA5B /* UIScrollView+SVPullToRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVPullToRefresh.h"; sourceTree = "<group>"; };
+		18139CA917A379EA006FDA5B /* UIScrollView+SVPullToRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVPullToRefresh.m"; sourceTree = "<group>"; };
+		18139CAD17A37A19006FDA5B /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		18139CAE17A37A19006FDA5B /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		18139CAF17A37A19006FDA5B /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		18139CB217A37B00006FDA5B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		18373C21175D8B78009D94E6 /* BLUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLUser.h; sourceTree = "<group>"; };
 		18373C22175D8B78009D94E6 /* BLUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLUser.m; sourceTree = "<group>"; };
 		18373C24175D9407009D94E6 /* BLPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLPost.h; sourceTree = "<group>"; };
@@ -148,6 +162,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18139CB317A37B00006FDA5B /* QuartzCore.framework in Frameworks */,
 				18B495C5175DCFAE00EA2FDD /* MobileCoreServices.framework in Frameworks */,
 				18B495C3175DCF4000EA2FDD /* SystemConfiguration.framework in Frameworks */,
 				18B495C1175DCEF500EA2FDD /* MapKit.framework in Frameworks */,
@@ -161,6 +176,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18139CA417A379EA006FDA5B /* SVPullToRefresh */ = {
+			isa = PBXGroup;
+			children = (
+				18139CA517A379EA006FDA5B /* SVPullToRefresh.h */,
+				18139CA617A379EA006FDA5B /* UIScrollView+SVInfiniteScrolling.h */,
+				18139CA717A379EA006FDA5B /* UIScrollView+SVInfiniteScrolling.m */,
+				18139CA817A379EA006FDA5B /* UIScrollView+SVPullToRefresh.h */,
+				18139CA917A379EA006FDA5B /* UIScrollView+SVPullToRefresh.m */,
+			);
+			path = SVPullToRefresh;
+			sourceTree = "<group>";
+		};
+		18139CAC17A37A19006FDA5B /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				18139CAD17A37A19006FDA5B /* SVProgressHUD.bundle */,
+				18139CAE17A37A19006FDA5B /* SVProgressHUD.h */,
+				18139CAF17A37A19006FDA5B /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 		18645464175A4842000DBCB9 = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +220,7 @@
 		1864546F175A4842000DBCB9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				18139CB217A37B00006FDA5B /* QuartzCore.framework */,
 				18645474175A4842000DBCB9 /* CoreGraphics.framework */,
 				18645472175A4842000DBCB9 /* Foundation.framework */,
 				18B495BE175DCEDE00EA2FDD /* ImageIO.framework */,
@@ -288,6 +326,8 @@
 		18974AC3175ADDFB00906BF8 /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				18139CAC17A37A19006FDA5B /* SVProgressHUD */,
+				18139CA417A379EA006FDA5B /* SVPullToRefresh */,
 				18B49598175DCE0800EA2FDD /* SDWebImage */,
 				18974AC6175ADE4C00906BF8 /* AFNetworking */,
 			);
@@ -422,6 +462,7 @@
 				18373C2B175DBEB2009D94E6 /* profile-image-placeholder@2x.png in Resources */,
 				18373C2E175DBEC5009D94E6 /* listbj_over.png in Resources */,
 				18373C2F175DBEC5009D94E6 /* listbj_over@2x.png in Resources */,
+				18139CB017A37A19006FDA5B /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -464,6 +505,9 @@
 				18B495BB175DCE0800EA2FDD /* UIButton+WebCache.m in Sources */,
 				18B495BC175DCE0800EA2FDD /* UIImage+GIF.m in Sources */,
 				18B495BD175DCE0800EA2FDD /* UIImageView+WebCache.m in Sources */,
+				18139CAA17A379EA006FDA5B /* UIScrollView+SVInfiniteScrolling.m in Sources */,
+				18139CAB17A379EA006FDA5B /* UIScrollView+SVPullToRefresh.m in Sources */,
+				18139CB117A37A19006FDA5B /* SVProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

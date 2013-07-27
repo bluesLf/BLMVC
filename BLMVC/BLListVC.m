@@ -10,6 +10,8 @@
 #import "BLPost.h"
 #import "BLListCell.h"
 #import "BLDetailVC.h"
+#import "SVProgressHUD.h"
+#import "SVPullToRefresh.h"
 
 @interface BLListVC () {
     __strong UIActivityIndicatorView *_activityIndicatorView;// 网络请求进度
@@ -43,7 +45,15 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.title = @"列表";
-    [self reload];// 加载数据
+    //
+    __weak __typeof(self) weakSelf = self;// 避免block循环引用
+    [self.listTableView addPullToRefreshWithActionHandler:^{
+        [weakSelf reloadPosts];
+        NSDate *date = [[NSDate alloc] init];
+        NSString *dateString = [NSDateFormatter localizedStringFromDate:date dateStyle:NSDateFormatterNoStyle timeStyle:NSDateFormatterMediumStyle];
+        [weakSelf.listTableView.pullToRefreshView setSubtitle:dateString forState:SVPullToRefreshStateStopped];
+    }];
+    [self reload];
 }
 
 - (void)didReceiveMemoryWarning
@@ -78,7 +88,11 @@
 }
 
 #pragma mark - Reload data
-- (void)reload {// 加载列表数据
+- (void)reload {
+    [self.listTableView triggerPullToRefresh];
+}
+- (void)reloadPosts {// 加载列表数据
+    [SVProgressHUD show];
     [_activityIndicatorView startAnimating];
     self.navigationItem.rightBarButtonItem.enabled = NO;
     NSString *path = @"stream/0/posts/stream/global";
@@ -96,6 +110,8 @@
             // 设置空视图
         }
         [_activityIndicatorView stopAnimating];
+        [self.listTableView.pullToRefreshView stopAnimating];
+        [SVProgressHUD dismiss];
         self.navigationItem.rightBarButtonItem.enabled = YES;
     }];
 }

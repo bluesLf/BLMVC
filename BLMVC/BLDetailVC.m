@@ -52,7 +52,7 @@
 
 #pragma mark - Reload data
 - (void)reload {// 加载详情数据
-    __weak __typeof(self) weakSelf;// 避免block循环引用
+    __weak __typeof(self) weakSelf = self;// 避免block循环引用
     __block UIActivityIndicatorView *activityIndicatorView = nil;
     // 下载图片
     [self.detailView.imageView setImageWithURL:[NSURL URLWithString:self.post.user.coverImageUrlStr] placeholderImage:nil options:SDWebImageProgressiveDownload progress:^(NSUInteger receivedSize, long long expectedSize) {
