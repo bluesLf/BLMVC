@@ -14,7 +14,8 @@
 {
     self = [super initWithFrame:frame];
     if (self) {
-        // Initialization code
+        // 构建视图
+        //
         _button = [UIButton buttonWithType:UIButtonTypeRoundedRect];
         _button.frame = CGRectMake(100, 40, 120, 40);
         [_button setTitle:@"点我吧" forState:UIControlStateNormal];
@@ -39,7 +40,7 @@
 #pragma mark - Setters
 - (void)setPost:(BLPost *)post {// 利用Setter更新视图
     _post = post;
-    
+    // ...
 }
 
 @end

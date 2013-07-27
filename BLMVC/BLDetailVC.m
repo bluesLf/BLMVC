@@ -27,6 +27,7 @@
 #pragma mark - View lifecycle
 - (void)loadView {// 手工构建视图，使用变量_XXX，其他地方使用属性self.XXX访问
     [super loadView];
+    // 兼容iPhone5，使用视图bounds构建视图
     CGRect bounds = self.view.bounds;
     bounds.size.height -= 44;
     // 构建视图
@@ -40,7 +41,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.title = @"详情";
-    [self reload];
+    [self reload];// 加载数据
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,14 +52,15 @@
 
 #pragma mark - Reload data
 - (void)reload {// 加载详情数据
+    __weak __typeof(self) weakSelf;// 避免block循环引用
     __block UIActivityIndicatorView *activityIndicatorView = nil;
     // 下载图片
     [self.detailView.imageView setImageWithURL:[NSURL URLWithString:self.post.user.coverImageUrlStr] placeholderImage:nil options:SDWebImageProgressiveDownload progress:^(NSUInteger receivedSize, long long expectedSize) {
         NSLog(@"%u %lld", receivedSize, expectedSize);
         if (nil == activityIndicatorView) {
             activityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-            activityIndicatorView.center = CGPointMake(self.detailView.imageView.center.x - self.detailView.imageView.frame.origin.x, self.detailView.imageView.center.y - self.detailView.imageView.frame.origin.y);
-            [self.detailView.imageView addSubview:activityIndicatorView];
+            activityIndicatorView.center = CGPointMake(weakSelf.detailView.imageView.center.x - weakSelf.detailView.imageView.frame.origin.x, weakSelf.detailView.imageView.center.y - weakSelf.detailView.imageView.frame.origin.y);
+            [weakSelf.detailView.imageView addSubview:activityIndicatorView];
             [activityIndicatorView startAnimating];
         }
     } completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {

@@ -12,7 +12,9 @@
 @class BLPost;
 
 /**
- 详情
+ 详情控制器。
+ 1、实现详情视图delegate；
+ 2、加载详情数据。
  */
 @interface BLDetailVC : UIViewController <BLDetailViewDelegate>
 @property (strong, nonatomic) BLPost *post;// 发布对象

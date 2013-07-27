@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 
 /**
- 列表
+ 列表控制器。
+ 1、目前上下拉控件使用`https://github.com/samvermette/SVPullToRefresh.git`，进度控件使用`https://github.com/samvermette/SVProgressHUD.git`和`https://github.com/jdg/MBProgressHUD.git`
  */
 @interface BLListVC : UIViewController <UITableViewDataSource, UITableViewDelegate>
 @property (strong, nonatomic) UITableView *listTableView;// 列表

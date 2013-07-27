@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+/**
+ iOS的项目架构@13-7-27。
+ */
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

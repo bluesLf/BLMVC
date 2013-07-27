@@ -12,8 +12,9 @@
 @class Response;
 
 /**
- 网络请求结果集，使用`dataArray`屏蔽数组或者字典返回数据，使用`resultArray`装解析JSON的对象。
- 支持分页对象和响应对象。
+ 网络请求结果集。
+ 1、使用`dataArray`屏蔽数组或者字典返回数据，使用`resultArray`装解析JSON的对象。
+ 2、支持分页对象和响应对象。
  */
 @interface BLResultSet : NSObject
 @property (strong, nonatomic) id dataArray;// 用于屏蔽数组或者字典 an array using for shielding NSArray and NSDictionary, add "data"

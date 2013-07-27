@@ -10,8 +10,8 @@
 
 /**
  用户实体。
- 使用`initWithAttributes:`解析JSON数据生成对象。
- 不同的网络请求可以创建`initXXXWithAttributes:`解析JSON数据生成对象。
+ 1、使用`initWithAttributes:`解析JSON数据生成对象。
+ 2、不同的网络请求可以创建`initXXXWithAttributes:`解析JSON数据生成对象。
  */
 @interface BLUser : NSObject
 @property (strong, nonatomic) NSString *userID;// 用户ID

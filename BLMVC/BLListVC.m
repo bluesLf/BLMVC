@@ -43,7 +43,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.title = @"列表";
-    [self reload];
+    [self reload];// 加载数据
 }
 
 - (void)didReceiveMemoryWarning
@@ -83,7 +83,7 @@
     self.navigationItem.rightBarButtonItem.enabled = NO;
     NSString *path = @"stream/0/posts/stream/global";
     NSDictionary *parameters = nil;
-    [BLPost postsWithPath:path parameters:parameters block:^(BLResultSet *resultSet, NSError *error) {
+    [BLPost postsWithPath:path parameters:parameters block:^(BLResultSet *resultSet, NSError *error) {// 通过该方法，集中逻辑代码
         if (error) {// 处理错误
             NSLog(@"error = %@", error);
         } else {

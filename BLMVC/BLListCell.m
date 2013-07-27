@@ -9,9 +9,9 @@
 #import "BLListCell.h"
 #import "BLPost.h"
 #import "BLUser.h"
-#import "UIImageView+AFNetworking.h"
+#import "UIImageView+AFNetworking.h"// 用于获取网络图片
 
-@interface BLListCell ()
+@interface BLListCell ()// 隐藏视图实现，通过实体对象更新视图，可以简化代码逻辑
 @property (strong, nonatomic) UIImageView *iconImageView;// 头像
 @property (strong, nonatomic) UILabel *usernameLabel;// 用户名
 @property (strong, nonatomic) UILabel *postTextLabel;// 发布内容
@@ -23,7 +23,8 @@
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
     if (self) {
-        // Initialization code
+        // 自定义表格单元
+        //
         _iconImageView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, 50, 50)];
         //
         _usernameLabel = [[UILabel alloc] initWithFrame:CGRectMake(70, 10, 240, 20)];
